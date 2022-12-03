@@ -24,7 +24,7 @@ function selectionSort(arr) {
     // Add the element at the smallest index
     newArr.push(arr[smallest]);
 
-    // Remove only the element with the smallest from the arr.
+    // Remove only the element at the smallest index from the arr.
     arr.splice(smallest, 1);
   }
   return newArr;
