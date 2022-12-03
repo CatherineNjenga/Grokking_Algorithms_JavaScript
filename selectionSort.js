@@ -11,15 +11,21 @@ function findSmallest(array) {
 }
 
 function selectionSort(arr) {
+  // A new array to save the sorted elements
   let newArr = [];
+
+  // A shallow copy of the original array to enable us access the length of the original array.
   let arrayCopy = arr.slice();
-  // In a loop
+
+  // Loop through the array and each time check for the smallest index
   for (let i = 0; i < arrayCopy.length; i += 1) {
     let smallest = findSmallest(arr);
     newArr.push(arr[smallest]);
+
+    // filter out the smallest element that have been added to the newArray.
     arr = arr.filter(element => {
       return element != arr[smallest]
-    })
+    });
   }
   return newArr;
 }
