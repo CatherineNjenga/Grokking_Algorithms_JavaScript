@@ -1,3 +1,18 @@
+// Worst-case scenario if the array is sorted
+function quicksort1(array) {
+  if (array.length < 2) {
+    return array;
+  } else {
+    let pivot = array[0];
+    let less = array.slice(1)
+                    .filter(element => element < pivot);
+    let greater = array.slice(1)
+                       .filter(element => element > pivot);
+    return quicksort1(less).concat(pivot, quicksort1(greater));
+  }
+}
+
+// Average/best-case scenario for a sorted array. Pick an element from the array randomly and use as a pivot.
 function quicksort(array) {
   if (array.length < 2) {
     return array;
